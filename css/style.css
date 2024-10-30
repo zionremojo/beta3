@@ -1,0 +1,184 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure body and html take full height */
+}
+
+#map {
+  width: 100%;
+  height: 100%; /* Changed to ensure it takes the full viewport height */
+  margin: 0;
+  padding: 0;
+  position: absolute; /* Make sure the map is positioned absolutely to cover the screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#selectContainer {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 11px 0;
+}
+
+#countrySelect {
+  width: 200px;
+  margin: 0 auto;
+}
+
+/* Center the icons inside the buttons and increase button size */
+.easy-button-button {
+  width: 50px; /* Increase button size */
+  height: 50px; /* Increase button size */
+  font-size: 1.5em; /* Increase icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Ensure zoom buttons are properly sized */
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  width: 50px; /* Increase button size */
+  height: 50px; /* Increase button size */
+  font-size: 1.5em; /* Increase icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure modal dialogs have appropriate width */
+.modal-dialog {
+  max-width: 500px; /* Set max-width to ensure appropriate width */
+  margin: 1.75rem auto;
+}
+
+.modal-header, .modal-body, .modal-footer {
+  font-size: 1em; /* Ensure readability */
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1.2em;
+}
+
+/* Ensure Day 1 and Day 2 take up equal width and align horizontally */
+.row .col-6 {
+  display: inline-block; /* Make sure Day 1 and Day 2 are side by side */
+  width: calc(50% - 20px); /* Set them to take 50% width with margins */
+  margin-right: 10px;
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+.modal-body {
+  overflow: hidden;
+  min-height: 350px;
+}
+
+.col-12.border.m-2 {
+  box-sizing: border-box;
+  padding: 15px;
+  max-width: 95%; /* Reduce width to align with Day 1 and Day 2 */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #f2f2f2;
+  border-top: 6px solid #56829e;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-preloader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* Weather Modal Customizations */
+#pre-load {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#pre-load:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #f2f2f2;
+  border-top: 6px solid #56829e;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
+}
+
+.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.modal-body .row-striped:nth-child(odd) {
+  background-color: #f9f9f9; /* Light gray for odd rows */
+}
+.modal-body .row-striped:nth-child(even) {
+  background-color: #e0e0e0; /* Slightly darker gray for even rows */
+}
+
+/* Add padding to restore row spacing */
+.modal-body .row-striped {
+  padding: 10px 0; /* Adjust top and bottom padding to increase space between rows */
+}
